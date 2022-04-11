@@ -1,0 +1,68 @@
+// available commands:
+// "gradle grade": run the GatorGrader checks
+// "gradle check": run checkstyle to assess code quality
+// "gradle clean": clean the project of all derived files
+// "gradle build": create the bytecode from the source code
+// "gradle run": run the program and produce output
+
+buildscript {
+  repositories {
+    maven {
+      url "https://plugins.gradle.org/m2/"
+    }
+    mavenLocal()
+    dependencies {
+      // other options, only needed for local testing:
+      // classpath "org.gatored:gatorgradle:+"
+      // classpath "gradle.plugin.org.gatored:gatorgradle:+"
+      classpath "gradle.plugin.org.gatored:gatorgradle:0.4.4"
+    }
+  }
+}
+
+// comment out gatorgradle if you want to use dev version
+plugins {
+    id "org.gatored.gatorgradle" version "0.3.4"
+    id "java"
+}
+
+// apply the version of the gradle plugin
+apply plugin: 'java'
+apply plugin: 'org.gatored.gatorgradle'
+
+// declare the repositories that are used to meet dependencies
+repositories {
+  mavenLocal()
+  jcenter()
+  mavenCentral()
+}
+
+// specify the use of the gradle version
+wrapper {
+  gradleVersion = '4.9'
+}
+
+// declare values to place in the manifest file in the JAR
+jar {
+  manifest {
+    attributes(
+        //'Class-Path': configurations.compile.collect { it.getName() }.join(' '),
+        'Main-Class': 'not.used'
+        )
+  }
+}
+
+// give the name of the application to run with "gradle run" command
+apply plugin: 'application'
+mainClassName = 'not.used'
+
+// perform checkstyle checking with the "gradle check" command
+apply plugin: 'checkstyle'
+checkstyle.toolVersion = '8.1'
+checkstyle {
+  ignoreFailures = false
+  maxWarnings = 0
+  maxErrors = 0
+  configFile = new File(rootDir, "config/checkstyle/google_checks.xml")
+}
+

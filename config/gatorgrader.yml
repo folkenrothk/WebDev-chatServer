@@ -1,0 +1,38 @@
+---
+name: CMPSC 302: Chat Server
+break: true
+indent: 2
+---
+
+app/scripts/server.js:
+  MatchFileFragment --fragment "TODO" --count 0 --exact --description "[nodejs] server.js contains no TODO markers"
+
+docs/style/style.css:
+  MatchFileFragment --fragment "@media" --count 1 --description "[CSS] style.css contains a media query for responsive design"
+  MatchFileFragment --fragment "TODO" --count 0 --exact --description "[CSS] style.css contains no TODO markers"
+
+docs/scripts/client.js:
+  MatchFileFragment --fragment "keydown" --count 1 --description "[Javascript] client.js handles at least 1 keydown event"
+  MatchFileFragment --fragment "new WebSocket(" --count 1 --exact --description "[Javascript] client.js creates a WebSocket"
+  MatchFileFragment --fragment "setInterval" --count 1 --description "[Javascript] client.js uses an interval for at least a 'keep-alive ping'"
+  MatchFileRegex --regex "JSON" --count 1 --description "[Javascript] client.js sends JSON to the WebSocket"
+  MatchFileFragment --fragment "createElement" --count 1 --description "[Javascript] client.js creates at least one HTML element"
+  MatchFileFragment --fragment "appendChild" --count 1 --description "[Javascript] client.js appends the created element as a child element"
+  MatchFileFragment --fragment "className" --count 1 --description "[Javascript] client.js sets the class name of the appended element"
+  MatchFileFragment --fragment "innerText" --count 1 --description "[Javascript] client.js sets the innerText of the appended element" 
+
+docs/index.html:
+  MatchFileFragment --fragment "TODO" --count 0 --exact --description "[HTML] index.html contains no TODO markers"
+
+writing/feature.md:
+  MatchFileFragment --fragment "TODO" --count 0 --exact --description "[Writing] feature.md contains no TODO markers"
+  CountFileParagraphs --count 3 --description "[Writing] feature.md answers all questions"
+
+ExecuteCommand --command "python config/.check.py docs/index.html script 1" --description "[HTML] index.html uses a script tag to import client.js"
+ExecuteCommand --command "html5validator --root docs/" --description "[HTML] The docs/ directory passes W3C validation"
+ExecuteCommand --command "html5validator --root docs/style --skip-non-css" --description "[CSS] The docs/ directory passes W3C validation"
+ExecuteCommand --command "python config/.check.py docs/index.html form 2" --description "[HTML] index.html uses 2 <form>s"
+ExecuteCommand --command "python config/.check.py docs/index.html button 2" --description "[HTML] index.html uses at least 2 <button>s"
+ExecuteCommand --command "python config/.wave.py index.html" --description "[CSS] Site has no contrast issues or form accessibilty errors"
+ExecuteCommand --command "python config/.selenium.py index.html" --description "[CHAT] Ulysses had a good time talking to himself for at least 4 minutes"
+

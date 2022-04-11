@@ -1,5 +1,12 @@
-/* TODO: Design interface */
+/* Design interface */
 
-/* TODO: Create media query {
+main {
+    display: grid;
+    grid-template-rows: 70% 30%;
+}
 
-} */
+/* Create media query */
+
+@media only screen and (max-width: 1024px) {
+    
+}

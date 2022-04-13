@@ -77,7 +77,6 @@ To complete the writing, finish the `TODO` in the `writing/` directory of the ma
 
 ![On the Go](https://chat.cmpsc302.chompe.rs/media/wireframe-mobile.png)
 
-#### Functionality
 
 ## Making a GitHub Pages page
 

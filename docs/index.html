@@ -7,12 +7,28 @@
   <body>
     <main>
       <!-- Create minimum interface according to wireframe -->
-      <div id="chat-interface">
-      </div>
-
-      <div id="chat-input">
-      </div>
+      <h1>Chat Interface</h1>
+      <h2>Chat Messages</h2>
+      <form>
+        <label for="sendMsg" id="msgLabel">Message Entry:</label>
+        <textarea id = "sendMsg">Enter Text</textarea>
+        <div id="messaging-buttons">
+          <button type = "submit">Submit</button>
+          <button type = "reset">Clear</button>
+        </div>
+      </form>
     </main>
+      <div id = "nameModal">
+        <h2>Name Entry</h2>
+        <form>
+          <label for = "sendMsg">Username:</label>
+          <input type="text" name = "nameEntry" id = "nameEntry" placeholder="Enter Text">
+          <div id="username-buttons">
+            <button type = "submit" id="setName">Submit</button>
+            <button type = "reset">Clear</button>
+          </div>
+        </form>
+      </div>
     <!-- Use <script> element to import the client.js file -->
     <script src="scripts/client.js" type="text/javascript"></script>
   </body>

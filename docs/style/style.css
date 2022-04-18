@@ -1,8 +1,54 @@
 /* Design interface */
+/* w/ help from Annaliese 4.18*/
 
-main {
-    display: grid;
-    grid-template-rows: 70% 30%;
+html {
+    height: 100vh;
+    margin: 0 20%;
+    font-family: sans-serif;
+}
+
+input {
+    background: #999999;
+    color: black;
+    border: none;
+    font-family: monospace;
+    font-size: 16px;
+}
+
+textarea {
+    resize: none;
+    width: 60vw;
+    height: 60vh;
+}
+
+button {
+
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+#nameModal {
+    position: relative;
+    background: #999999;
+    top: 50%;
+    transform: translate(-50%); /* flexibleness*/
+    margin: 0 auto;
+    width: 50vw;
+    font-size: 20px;
+}
+
+#msgLabel {
+    display: block;
+}
+
+#nameEntry {
+    width: 50%;
+}
+
+#spacer {
+    color: #ffffff;
 }
 
 /* Create media query */

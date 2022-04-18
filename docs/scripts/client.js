@@ -12,6 +12,17 @@ order matters, serialization bruh
 
 */
 
+/*  missing lab w/ help from Maria */
+
+// Collecting username
+setName.addEventListener("click", (evt) => {
+    let name = nameEntry.value;
+    if(!name) return false;
+    chat.name = name;
+    nameModal.setAttribute("hidden","true");
+    evt.preventDefault();
+})
+
 // Script WebSocket communication 
 var chat = {
     socket: new WebSocket(host), //how we show up
@@ -49,13 +60,3 @@ var chat = {
 chat.init();
 
 
-/*  missing lab w/ help from Maria */
-
-// Collecting username
-setName.addEventListener("click", (evt) => {
-    let name = nameEntry.value;
-    if(!name) return false;
-    chat.name = name;
-    nameModal.setAttribute("hidden","true");
-    evt.preventDefault();
-})

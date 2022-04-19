@@ -17,9 +17,10 @@ setName.addEventListener("click", (evt) => {
     let name = nameEntry.value;
     if(!name) return false;
     chat.name = name;
-    nameModal.setAttribute("hidden","true");
+    nameBox.setAttribute("hidden","true");
     evt.preventDefault();
 })
+
 
 // Using enter key as submission option
 sendMsg.addEventListener("keydown", (evt) => {
@@ -65,7 +66,7 @@ var chat = {
         // we can only send one thing (but this can be a package of things)
         let packet = {
             user: chat.name,
-            text: sendMsg.value() || message,
+            text: sendMsg.value || message,
             type: type
         }
         //prevent blank messages (mostly)

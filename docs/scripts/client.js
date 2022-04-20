@@ -40,7 +40,8 @@ var chat = {
         chat.socket.addEventListener("message", (evt) => {
             // let's listen right away
             let msg = evt.data; // let the content be the message (not the id)
-            console.log(msg); // temporary test to listen
+            //console.log(msg); // temporary test to listen
+            chat.post(msg);
         });
         // hungry hungry web sockets: need to give something or it will shut off
         setInterval(() => { // "A keep alive" - no name so cant stop wont stop

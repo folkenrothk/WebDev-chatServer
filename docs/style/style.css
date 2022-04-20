@@ -1,10 +1,13 @@
 /* Design interface */
-/* w/ help from Annaliese 4.18*/
 
 html {
-    height: 100vh;
-    margin: 0 20%;
     font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+body {
+    height: 100vh;
+    margin: 0 0 0 20%;
+    overflow: hidden;
 }
 
 input {
@@ -18,8 +21,7 @@ input {
 textarea {
     resize: none;
     width: 60vw;
-    height: 20vh;
-    order: 1;
+    height: 10vh;
 }
 
 button {
@@ -32,12 +34,14 @@ h1, h2 {
 }
 
 #chat-window {
-    display: grid;
-    grid-template-rows: auto auto;
+    overflow-y: scroll;
+    animation: .15s;
+    width: 95vw;
+    padding-right: 5%;
+
 }
 
-#chat-login {
-    order: 1;
+#chatLogin {
 }
 
 #nameBox{
@@ -45,8 +49,7 @@ h1, h2 {
     border-radius: 10pt;
     background: #222222;
     color: #ffffff;
-    position: relative;
-    top: 50%;
+    top: 20%;
     width: 50vw;
     font-family: monospace;
 }
@@ -64,17 +67,11 @@ h1, h2 {
 
 
 
-#chatForm {
-    order: 2;
-    position: relative;
-    top: 40vh;
+#chatMgmt form{
+    height: 10vh;
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: 80% 10%;
     grid-gap: 2vw;
-}
-
-#sendBtn {
-    order: 2;
 }
 
 

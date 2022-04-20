@@ -17,12 +17,19 @@ setName.addEventListener("click", (evt) => {
     let name = nameEntry.value;
     if(!name) return false;
     chat.name = name;
-    nameBox.setAttribute("hidden","true");
+    chatLogin.setAttribute("hidden","true");
     evt.preventDefault();
 })
 
 
 // Using enter key as submission option
+nameEntry.addEventListener("keydown", (evt) => {
+    if(evt.key == "Enter"){
+        setName.click();
+        evt.preventDefault();
+    }
+});
+
 sendMsg.addEventListener("keydown", (evt) => {
     if(evt.key == "Enter"){
         sendBtn.click();
@@ -42,6 +49,7 @@ var chat = {
             let msg = evt.data; // let the content be the message (not the id)
             //console.log(msg); // temporary test to listen
             chat.post(msg);
+            
         });
         // hungry hungry web sockets: need to give something or it will shut off
         setInterval(() => { // "A keep alive" - no name so cant stop wont stop
@@ -56,11 +64,10 @@ var chat = {
             document.getElementsByClassName("chat-msg")
         );
         let pos = msgs[msgs.length-1].offsetTop;
-        document.getElementById("chat-window").scrollTo({
+        chat.window.scrollTo({
             top:pos,
             behavior: "smooth"
         });
-        return false;
     },
 
     send: (message, type) => {
@@ -88,8 +95,8 @@ var chat = {
         text.innerText = `${message}`;
         msg.appendChild(text);
         chat.window.appendChild(msg);
-        return false;
         chat.scroll();
+        return false;
     },
 }
 

@@ -10,7 +10,7 @@ order matters, serialization bruh
 
 */
 
-/*  missing lab w/ help from Maria */
+/*  missing lab w/ help from Maria & Annaliese*/
 
 // Collecting username
 setName.addEventListener("click", (evt) => {

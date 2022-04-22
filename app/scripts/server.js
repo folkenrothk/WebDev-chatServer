@@ -31,9 +31,6 @@ socket.on("connection", (sock, request) => {
     delete users[uid];
   });
 
-  // TODO: Remove this statement
-  users[uid].send("Hello from Heroku!");
-
   sock.on("message", (message) => {
     message = JSON.parse(message);
     let name = message.user;

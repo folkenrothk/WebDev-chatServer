@@ -19,6 +19,7 @@ setName.addEventListener("click", (evt) => {
     chat.name = name;
     chatLogin.setAttribute("hidden","true");
     evt.preventDefault();
+    chat.send(`Welcome ${chat.name}!`,"greet");
 })
 
 
@@ -71,7 +72,7 @@ var chat = {
     },
 
     send: (message, type) => {
-        // we can only send one thing (but this can be a package of things)
+        // we can only send one thing (but this can be a package of things)        
         let packet = {
             user: chat.name,
             text: sendMsg.value || message,

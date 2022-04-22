@@ -8,7 +8,7 @@
 
 `TODO`
 
-## Paste the code used to acheive this between the two "fences" below.
+## Paste the code used to achieve this between the two "fences" below.
 
 You must use at least one of the entries below.
 
@@ -16,31 +16,39 @@ You must use at least one of the entries below.
 
 #### `client.js`
 
-(Delete if not using this portion)
-
 ```javascript
-// TODO
+sendMsg.addEventListener("keydown", (evt) => { 
+    if(evt.key == "Escape"){
+        chat.post("BLAST-OFF");
+        var randNum = Math.floor(Math.random() * 7) + 1;
+        var fileName = "g" + randNum;
+        var path = `style/img/${fileName}.png`;
+        document.body.style.backgroundImage = `url('${path}')`;
+    }
+});
 ```
 
-#### `server.js`
 
-(Delete if not using this portion.)
+### Other Additions
+
+#### `client.js`
 
 ```javascript
-// TODO
-```
+setName.addEventListener("click", (evt) => {
+    let name = nameEntry.value;
+    if(!name) return false;
 
-#### HTML
+    chatLogin.setAttribute("hidden","true");
+    evt.preventDefault();
 
-(Delete if not using this portion.)
+    username = `Cadet ${name}`;
 
-```html
-<!-- TODO -->
+    chat.name = username;
+    chat.send(`Welcome ${chat.name}`,"greet");
+});
 ```
 
 #### CSS
-
-(Delete if not using this portion.)
 
 ```css
 /* TODO */

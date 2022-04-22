@@ -23,7 +23,7 @@ setName.addEventListener("click", (evt) => {
 
     chat.name = username;
     chat.send(`Welcome ${chat.name}`,"greet");
-})
+});
 
 
 // Using enter key as submission option
@@ -48,7 +48,7 @@ sendMsg.addEventListener("keydown", (evt) => {
         var randNum = Math.floor(Math.random() * 7) + 1;
         var fileName = "g" + randNum;
         var path = `style/img/${fileName}.png`;
-        document.body.style.background = `url('${path}')`;
+        document.body.style.backgroundImage = `url('${path}')`;
     }
 });
 

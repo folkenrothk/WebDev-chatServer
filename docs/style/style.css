@@ -5,7 +5,7 @@ html {
 }
 
 body {
-    background-color: #999999;
+    background: #999999;
     height: 100vh;
     margin: 0;
     overflow: hidden;
@@ -24,7 +24,7 @@ h1 {
 }
 
 textarea {
-    width: 60vw;
+    width: 75vw;
     height: 10vh;
 }
 
@@ -40,22 +40,25 @@ button {
 #chat-window {
     overflow-y: scroll;
     animation: .15s;
-    width: 95vw;
+    width: 90vw;
+    padding-left: 2%;
     padding-right: 5%;
     order: 2;
-    margin-top: 10%;
+    margin: 0 auto;
+    background-color: #222222;
+    color: white;
 }
 
 #nameBox{
     border-radius: 10pt;
-    background: #222222;
+    background: #555555;
     color: #ffffff;
     font-family: monospace;
-    margin: 0 auto;
     position: relative;
     top: 20%;
-    height: inherit;
-    width: 50vw;
+    margin: 10vh auto;
+    height: 10vh;
+    width: 20vw;
     padding: 5%;
 }
   
@@ -73,8 +76,7 @@ button {
 #chatMgmt form{
     height: 10vh;
     display: grid;
-    grid-template-columns: auto auto;
-    grid-gap: 2vw;
+    grid-template-columns: 80vw 5vw;
 }
   
 

@@ -1,6 +1,5 @@
 var host = "wss://cmpsc-302-chat-server-katefolk.herokuapp.com"; // TODO: Change to your Heroku host
 
-
 /* Notes 4.13: ahh serialization and metadata?
 let name = message.users; >> let msg = message.text; >> let type = emoji(message.type);
 
@@ -16,10 +15,14 @@ order matters, serialization bruh
 setName.addEventListener("click", (evt) => {
     let name = nameEntry.value;
     if(!name) return false;
-    chat.name = name;
+
     chatLogin.setAttribute("hidden","true");
     evt.preventDefault();
-    chat.send(`Welcome ${chat.name}!`,"greet");
+
+    username = `Cadet ${name}`;
+
+    chat.name = username;
+    chat.send(`Welcome ${chat.name}`,"greet");
 })
 
 
@@ -35,8 +38,28 @@ sendMsg.addEventListener("keydown", (evt) => {
     if(evt.key == "Enter"){
         sendBtn.click();
         evt.preventDefault();
+        
     }
 });
+
+sendMsg.addEventListener("keydown", (evt) => { 
+    if(evt.key == "Escape"){
+        chat.post("BLAST-OFF");
+        var randNum = Math.floor(Math.random() * 7) + 1;
+        var fileName = "g" + randNum;
+        var path = `style/img/${fileName}.png`;
+        document.body.style.background = `url('${path}')`;
+    }
+});
+
+
+sendMsg.addEventListener("keydown", (evt) => {
+    if(evt.key == "."){
+        chat.post(`${chat.name} you're messing up the vibes`)
+    }
+});
+
+
 
 // Script WebSocket communication 
 var chat = {
@@ -72,6 +95,7 @@ var chat = {
     },
 
     send: (message, type) => {
+
         // we can only send one thing (but this can be a package of things)        
         let packet = {
             user: chat.name,
@@ -85,6 +109,7 @@ var chat = {
         chat.socket.send(
             JSON.stringify(packet) // blah our package is in java (gross), Json will fix it
         );
+
         if(type !== "ping") sendMsg.value="";
         return false; // act like it didn't happen, set defaults
     },
@@ -99,6 +124,7 @@ var chat = {
         chat.scroll();
         return false;
     },
+
 }
 
 // Start the Chat

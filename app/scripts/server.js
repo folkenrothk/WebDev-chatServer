@@ -9,12 +9,10 @@ const socket = new Server({ server });
 
 var users = {};
 
-// TODO: Customize server emoji set
-
 const emoji = {
-  "greet": ["👋"],
-  "normal": ["😹","🐱","😼","😸","🙀"],
-  "ping": ["🔊"],
+  "greet": ["🧑‍🚀","👽"],
+  "normal": ["🚀","⭐","🌟","💫","🌠"],
+  "ping": ["👾"],
 }
 
 socket.on("connection", (sock, request) => {

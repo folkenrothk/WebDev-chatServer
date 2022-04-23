@@ -10,6 +10,8 @@ I plan to code this on the client side so that it does not disturb every users' 
 
 ## Paste the code used to achieve this between the two "fences" below.
 
+You must use at least one of the entries below.
+
 ### Javascript
 
 #### `client.js`

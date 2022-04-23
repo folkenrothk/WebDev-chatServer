@@ -2,15 +2,13 @@
 
 ## In no more than 150 words, describe the chat feature you plan to implement.
 
-`TODO`
+The chat feature I plan to implement is one that changes the background of the chat screen. This would allow for "the void" to be a different galaxy at the click of a button. I want to design it that so it would only change for the current user. I do not want it  changing, thus not flashing, for all users of the chat. 
 
 ## How do you plan to achieve this?
 
-`TODO`
+I plan to code this on the client side so that it does not disturb every users' experience. This will work with an event listener on the escape key. I plan to create a random generator to pick one of the galaxy images to make the background.
 
 ## Paste the code used to achieve this between the two "fences" below.
-
-You must use at least one of the entries below.
 
 ### Javascript
 
@@ -29,7 +27,7 @@ sendMsg.addEventListener("keydown", (evt) => {
 ```
 
 
-### Other Additions
+### Other "Spacey" Additions
 
 #### `client.js`
 
@@ -48,8 +46,13 @@ setName.addEventListener("click", (evt) => {
 });
 ```
 
-#### CSS
+#### `server.js`
 
-```css
-/* TODO */
+```javascript
+const emoji = {
+  "greet": ["🧑‍🚀","👽"],
+  "normal": ["🚀","⭐","🌟","💫","🌠"],
+  "ping": ["👾"],
+}
 ```
+

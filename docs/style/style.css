@@ -28,17 +28,14 @@ h1 > b{
     padding: .5vw;
 }
 textarea {
-    width: 75vw;
+    width: 70vw;
     height: 10vh;
-}
-
-form {
-    padding: 2%;
 }
 
 button {
     border-radius: 2pt;
     background-color: lightcoral;
+    font-size: large;
 }
 
 #chat-window {
@@ -77,11 +74,11 @@ button {
 }
 
 #chatMgmt form{
-    height: 10vh;
     display: grid;
-    grid-template-columns: 73vw 5vw;
-    grid-gap: 5vw;
+    height: 10vh;
     width: 80vw;
+    grid-template-columns: 70vw 10vw;
+    grid-gap: 2vw;
     margin: 0 auto;
 }
   
@@ -102,11 +99,8 @@ button {
         order: 2;
     }
 
-    #chat-mgmt form {
-        display: grid;
-        grid-template-columns: 80% 10%;
-        grid-template-rows: 100% 100%;
-        height: 85%;
+    #chatMgmt form {
+        grid-gap: 3%;
     }
     
     #chat-window {
@@ -118,6 +112,4 @@ button {
         width: 70%;
         margin: auto auto;
     }
-    
-
 }

@@ -34,5 +34,4 @@ ExecuteCommand --command "html5validator --root docs/style --skip-non-css" --des
 ExecuteCommand --command "python config/.check.py docs/index.html form 2" --description "[HTML] index.html uses 2 <form>s"
 ExecuteCommand --command "python config/.check.py docs/index.html button 2" --description "[HTML] index.html uses at least 2 <button>s"
 ExecuteCommand --command "python config/.wave.py index.html" --description "[CSS] Site has no contrast issues or form accessibilty errors"
-ExecuteCommand --command "python config/.selenium.py index.html" --description "[CHAT] Ulysses had a good time talking to himself for at least 4 minutes"
 

@@ -32,13 +32,4 @@
           pip install selenium
           pip install webdriver_manager
           sudo Xvfb -ac :99 -screen 0 1280x1024x24 > /dev/null 2>&1 &
-      - name: Grade repository
-        run: |
-          source config/.pages.sh
-          gradle grade
-        if: always()
-        env:   
-         PIPENV_VENV_IN_PROJECT: 1
-         PIPENV_IGNORE_VIRTUALENVS: 1
-         DISPLAY: :99
-         WDM_LOG_LEVEL: 0
+
